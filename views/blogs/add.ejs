@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+
+
+
+
+
+<div class="ui main text container centered grid" >
+    <form action="/index" method="POST" class="ui form" style="text-align: left; width: 100%;" >
+        <h1 style="margin : 5% auto;">New Post</h1>
+      
+        
+        <div class="field">
+            <label >Title</label>
+            <input type="text" placeholder="Title" name="title"  >
+        </div>
+        <div class="field">
+            <label >image</label>
+            <input type="text" placeholder="image_url" name="image" >
+        </div>
+        <div class="field">
+            <label >Description</label>
+            <textarea name="desc"  cols="30" rows="10"></textarea>
+          
+        </div>
+       <div class="field">
+        <form action="/index" method="post">
+            <button class="ui purple basic button" style="margin-bottom: 3%;">Add Post</button>
+        </form>
+            
+
+       </div>
+        
+        
+    </form>
+
+</div>
+
+
+
+
+
+
+<%- include('../partials/footer') %>

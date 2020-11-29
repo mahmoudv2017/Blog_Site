@@ -1,0 +1,14 @@
+.grid{
+    border: 2px solid black;
+
+}
+p{
+    width: 50rem;
+    word-wrap:break-word;
+}
+
+
+i.icon{
+    font-size: 2rem;
+}
+

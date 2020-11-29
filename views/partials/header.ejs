@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blogs Site</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" >
+        <link rel="stylesheet" type="text/css" href="/app.css">
+        
+        
+    </head>
+
+    <body>
+
+        <div style="padding-bottom: 7%;">
+
+        
+        <div class="ui fixed inverted menu" >
+            <div class="ui container" >
+                <div class="header item"> <i class="basketball ball icon"></i> blog_site</div>
+                <a class="item" href="/index">Home</a>
+                <a class="item" href="/index/new">New</a>
+
+                <% if(!current_user){ %>
+                    <a href="/register" class="right item" >SignUp</a>
+                    <a href="/login" class="item" >Login</a>
+                <% }else{ %>
+                    <a class="right item"> Signed as <%= current_user.username %> </a>
+                    <a href="/logout" class="item" >Logout</a>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+
+  
+
+       
+
+        
+        
+     
+
+
+

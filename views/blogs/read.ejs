@@ -1,0 +1,74 @@
+<%- include('../partials/header')  %>
+
+
+
+    
+
+<div class="ui main text container" >
+    <div  class=" ui  internally  ">
+        <div class="sixteen wide column">
+            <img class="ui large image centered " style="width: max-content;"  src= <%= blog.img %> >
+        </div>
+
+        <div class="sixteen wide column">
+            <h1> <%= blog.title %> </h1>
+            <h4> <%= blog.time %> </h4>
+            <div style="margin-bottom: 4%;">
+                <p ><%= blog.desc %></p>
+            </div>
+            
+
+            
+
+            <a href="/index/<%= blog.id %>/edit"  ><button class="ui blue button"> Edit </button></a>
+
+            <form style="display: inline;" method="POST" action="/index/<%= blog.id %>?_method=DELETE">
+                 <button  class="ui red button">Delete Post</button>
+            </form>
+
+            <a href="/index/<%= blog.id %>/comments/new"  ><button class="ui black button"> Add New Comment </button></a>
+
+
+            <div>
+                <% if(  error  == "fuck you" ){ %>
+                    <script>
+                        alert('<%= error %>')
+                    </script>
+                <% } %>
+                <h2>Extra Comments</h2>
+                <% blog.comments.forEach(comment => { %>
+                    
+                   
+                    
+                    <h3 style=" display: inline; "><%= comment.title %>  </h3>
+                    <form style=" float: right; " method="POST" action="/index/<%= blog.id %>/<%= comment.id %>?_method=DELETE">
+                        <button  class="ui mini red button">Delete</button>
+                    </form>
+                    
+                    <a style="float: right;" href="/index/<%= blog.id %>/comments/<%= comment.id %>/edit" ><button  class="ui mini blue button">Edit</button> </a> 
+                        
+                        <p style="font-weight: normal;"><%= comment.content.substring(0,100) %></p>
+                    
+                    
+                    
+                    
+                
+                <% }) %>
+            </div>
+           
+
+        </div>
+         
+           
+
+        
+         
+        
+       
+    </div>
+
+</div>
+
+
+
+<%- include('../partials/footer')  %>

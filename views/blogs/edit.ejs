@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+
+
+
+<div class="ui main text container centered grid">
+    <form action="/index/<%= records.id  %>?_method=PUT" method="POST" class="ui form" style="text-align: left; width: 100%;" >
+        <h1 style="margin : 5% auto;">Edit Post</h1>
+      
+        
+        <div class="field">
+            <label >Title</label>
+            <input type="text" placeholder="Title" name="title" value = "<%=  records.title  %>" >
+        </div>
+        <div class="field">
+            <label >Image</label>
+            <input type="text" placeholder="Title" name="image" value = "<%=  records.img  %>" >
+        </div>
+        <div class="field">
+            <label >Description</label>
+            <textarea name="desc"  cols="30" rows="10"><%=  records.desc  %></textarea>
+          
+        </div>
+       <div class="field">
+    
+            <button class="ui purple basic button" style="margin-bottom: 3%;">Update Post</button>
+
+       </div>
+        
+        
+        
+    </form>
+
+</div>
+
+
+
+
+
+<%- include('../partials/footer') %>
