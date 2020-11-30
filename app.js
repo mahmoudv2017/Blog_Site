@@ -105,8 +105,11 @@ app.get("/index/:id",function(req,res){
         res.render('blogs/add')
     }
     blogs.findById(req.params.id).populate('comments').exec(function(err,blog){
+      
+        let current_user2 = req.user != null ? req.user.username : "no user"
         if(!err){
-            res.render('blogs/read' , { blog : blog , error : ''})
+            
+            res.render('blogs/read' , { blog : blog , error : '' , current_user2 : current_user2})
         }
     })
 

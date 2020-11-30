@@ -4,7 +4,7 @@
 
     
 
-<div class="ui main text container" >
+<div class="ui main text container reader" >
     <div  class=" ui  internally  ">
         <div class="sixteen wide column">
             <img class="ui large image centered " style="width: max-content;"  src= <%= blog.img %> >
@@ -30,22 +30,29 @@
 
 
             <div>
-                <% if(  error  == "fuck you" ){ %>
-                    <script>
-                        alert('<%= error %>')
-                    </script>
-                <% } %>
-                <h2>Extra Comments</h2>
+                
+                <h2>Extra Comments </h2>
                 <% blog.comments.forEach(comment => { %>
                     
                    
                     
                     <h3 style=" display: inline; "><%= comment.title %>  </h3>
                     <form style=" float: right; " method="POST" action="/index/<%= blog.id %>/<%= comment.id %>?_method=DELETE">
-                        <button  class="ui mini red button">Delete</button>
+                        <% if(comment.title != current_user2) { %>
+                            <button class="ui mini red button disabled" >Delete</button>
+                        <% }else{ %>
+                            <button class="ui mini red button" >Delete</button>
+
+                        <% } %>
+                        
                     </form>
+                     <% if(comment.title != current_user2) { %>
+                            <a class="disabled" style="float: right;" href="/index/<%= blog.id %>/comments/<%= comment.id %>/edit" ><button  class="ui mini blue button disabled">Edit</button> </a> 
+                        <% }else{ %>
+                            <a style="float: right;" href="/index/<%= blog.id %>/comments/<%= comment.id %>/edit" ><button  class="ui mini blue button">Edit</button> </a> 
+
+                        <% } %>
                     
-                    <a style="float: right;" href="/index/<%= blog.id %>/comments/<%= comment.id %>/edit" ><button  class="ui mini blue button">Edit</button> </a> 
                         
                         <p style="font-weight: normal;"><%= comment.content.substring(0,100) %></p>
                     

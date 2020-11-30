@@ -2,32 +2,34 @@
 
 <div class="ui main text container"  >
     <div  class=" ui  internally grid ">
-    
-        <% blogs.forEach(blog => {  %>
-        <div class="one column row" >
-            <div class="five wide column">
-                <img class="ui large image"  src= <%= blog.img %> >
-               
-            </div>
-            <div class="eleven wide column">
-                <h1 id="titler"> <%= blog.title %> </h1>
+       
+            <% blogs.forEach(blog => {  %>
+            <div class="one column row" >
+                <div class="five wide column">
+                    <img class="ui large image"  src= <%= blog.img %> >
                 
-                <h4> <%= blog.time %> </h4>
-                <p ><%= blog.desc.substring(0,55) %>....</p>
+                </div>
+                <div class="eleven wide column">
+                    <h1 id="titler"> <%= blog.title %> </h1>
+                    
+                    <h4> <%= blog.time %> </h4>
+                    <p ><%= blog.desc.substring(0,55) %>....</p>
 
+                    
                 
-               
-               <a style="width: 10%;" href="/index/<%= blog.id %>" > <button class="ui orange button">Read More </button>  </a> 
-                
+                <a style="width: 10%;" href="/index/<%= blog.id %>" > <button class="ui orange button">Read More </button>  </a> 
+                    
 
-            </div>
-          
+                </div>
             
+                
 
-        </div>
-        <div class="ui divider"></div>
-  
-        <% })  %>
+            </div>
+            <div class="ui divider"></div>
+    
+            <% })  %>
+
+      
     </div>
 
 </div>

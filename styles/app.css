@@ -5,6 +5,7 @@
 p{
     width: 50rem;
     word-wrap:break-word;
+    
 }
 
 
@@ -12,3 +13,15 @@ i.icon{
     font-size: 2rem;
 }
 
+body.darkmode--activated > .main   {
+    color: white;
+}
+
+body.darkmode--activated > .reader   {
+    color: black;
+}
+
+.disabled{
+    pointer-events: none;
+    cursor: wait;
+}
